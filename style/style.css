@@ -1,0 +1,273 @@
+body,
+ul,
+li,
+h2,
+h3,
+h4,
+p,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+figure {
+  margin: 0;
+}
+
+button {
+  border: none;
+  border-style: none;
+}
+
+input {
+  outline: none;
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  src: url("../fonts/../fonts/TTHoves-Bold.eot");
+  src: local("TT Hoves Bold"), local("../fonts/TTHoves-Bold"), url("../fonts/TTHoves-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/TTHoves-Bold.woff2") format("woff2"), url("../fonts/TTHoves-Bold.woff") format("woff"), url("../fonts/TTHoves-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Hoves";
+  src: url("../fonts/TTHoves-Regular.eot");
+  src: local("TT Hoves Regular"), local("../fonts/TTHoves-Regular"), url("../fonts/TTHoves-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/TTHoves-Regular.woff2") format("woff2"), url("../fonts/TTHoves-Regular.woff") format("woff"), url("../fonts/TTHoves-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Hoves";
+  src: url("../fonts/TTHoves-Light.eot");
+  src: local("TT Hoves Light"), local("../fonts/TTHoves-Light"), url("../fonts/TTHoves-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/TTHoves-Light.woff2") format("woff2"), url("../fonts/TTHoves-Light.woff") format("woff"), url("../fonts/TTHoves-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Hoves";
+  src: url("../fonts/TTHoves-Medium.eot");
+  src: local("TT Hoves Medium"), local("../fonts/TTHoves-Medium"), url("../fonts/TTHoves-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/TTHoves-Medium.woff2") format("woff2"), url("../fonts/TTHoves-Medium.woff") format("woff"), url("../fonts/TTHoves-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+body {
+  font-family: "TT Hoves";
+}
+
+.light {
+  background-color: #ffffff;
+}
+
+.dark {
+  background-color: #333333;
+}
+
+.container {
+  max-width: 1620px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+}
+
+.header__logo {
+  width: 40%;
+}
+.header__logo figure {
+  width: auto;
+  height: 100%;
+}
+
+.header,
+.header__list {
+  display: flex;
+  justify-content: "start";
+  align-items: center;
+}
+
+.header {
+  min-height: 8vh;
+  font-family: "TT Hoves";
+  background-color: rgba(255, 255, 255, 0.5019607843);
+}
+
+.header__list {
+  width: 60%;
+  gap: 1rem;
+}
+.header__list a {
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.home {
+  min-height: 92vh;
+  padding-top: 12vh;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: "center";
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #bdbdbd;
+}
+h1 span {
+  font-weight: bold;
+  color: #2c2c2c;
+}
+
+.home__title {
+  width: 40%;
+}
+
+.arrowBtn {
+  width: 53px;
+  height: 53px;
+  border: 1px solid #f2f2f2;
+}
+
+.arrowBtn:first-child {
+  background-color: #ffffff;
+  margin-right: 24px;
+}
+
+.arrowBtn:last-child {
+  background-color: #f9f9f9;
+}
+
+.home__image {
+  width: 60%;
+  position: relative;
+}
+.home__image figure {
+  display: block;
+}
+.home__image figure img {
+  width: 100%;
+  height: auto;
+}
+
+.button {
+  display: flex;
+  justify-content: "center";
+  align-items: center;
+  gap: 0.5rem;
+  padding: 24px 48px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.homeBtn-wrap {
+  margin-bottom: 90px;
+}
+
+.homeBtn {
+  position: absolute;
+  bottom: 3px;
+  background-color: #ffffff;
+}
+
+.home__numbers {
+  display: flex;
+  justify-content: "start";
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  color: #bdbdbd;
+}
+.home__numbers li:first-child::after {
+  content: "";
+  width: 20px;
+  height: 30px;
+  padding: 10px;
+  border-right: 2px solid #f2f2f2;
+  transform: rotate(90deg);
+}
+
+.galery {
+  min-height: 100vh;
+  border: 1px solid red;
+}
+
+.about {
+  display: flex;
+  justify-content: "center";
+  align-items: center;
+  background-color: red;
+  padding: 30px 70px 30px 100px;
+  position: relative;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 120px;
+  border: 1px solid blue;
+}
+
+.aboutInfo {
+  padding: 0 10px;
+}
+.aboutInfo h2 {
+  font-size: 4rem;
+  font-weight: 300;
+  color: #bdbdbd;
+  margin-bottom: 20px;
+}
+.aboutInfo p {
+  font-size: 1rem;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+
+.aboutBtn {
+  background-color: #ffffff;
+}
+
+.aboutImage {
+  width: 60%;
+  display: flex;
+  justify-content: "start";
+  align-items: center;
+  position: absolute;
+  border: 1px solid red;
+  left: 100px;
+  top: 15px;
+  bottom: -15px;
+}
+.aboutImage figure {
+  padding: 5px 15px;
+}
+.aboutImage figure img {
+  width: 100%;
+  height: auto;
+}
+
+.aboutInfo {
+  width: 40%;
+}/*# sourceMappingURL=style.css.map */
