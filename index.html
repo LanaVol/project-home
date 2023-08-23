@@ -44,7 +44,9 @@
       <section id="home" class="home container light">
         <div class="wrapper">
           <div class="home__title">
-            <h1>Project <br /><span>Home</span></h1>
+            <h1 class="title c-darkGrey">
+              Project <br /><span class="c-black">Home</span>
+            </h1>
 
             <div class="homeBtn-wrap">
               <button class="arrowBtn">
@@ -55,7 +57,7 @@
               </button>
             </div>
 
-            <ul class="home__numbers">
+            <ul class="home__numbers c-darkGrey">
               <li>01</li>
               <li>02</li>
             </ul>
@@ -63,7 +65,11 @@
 
           <div class="home__image">
             <figure>
-              <img src="./image/homeImg.png" alt="Building with white fasade" />
+              <img
+                src="./image/homeImg.png"
+                alt="Building with white fasade"
+                class="image"
+              />
             </figure>
 
             <button class="button homeBtn">
@@ -77,26 +83,38 @@
       </section>
 
       <!-- Galery section -->
-      <section id="galery" class="galery container light">
+      <section id="galery" class="section container light">
         <div class="about">
           <div class="aboutImage">
             <div>
               <figure>
-                <img src="./image/aboutFirstImg.png" alt="Fasade building" />
+                <img
+                  src="./image/aboutFirstImg.png"
+                  alt="Fasade building"
+                  class="image"
+                />
               </figure>
 
               <figure>
-                <img src="./image/aboutThirdImg.png" alt="Fasade building" />
+                <img
+                  src="./image/aboutThirdImg.png"
+                  alt="Fasade building"
+                  class="image"
+                />
               </figure>
             </div>
 
             <figure>
-              <img src="./image/aboutSecondImg.png" alt="Fasade building" />
+              <img
+                src="./image/aboutSecondImg.png"
+                alt="Fasade building"
+                class="image"
+              />
             </figure>
           </div>
 
           <div class="aboutInfo">
-            <h2>Про компанію</h2>
+            <h2 class="title c-darkGrey">Про компанію</h2>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -114,28 +132,70 @@
           </div>
         </div>
 
-        <div>
-          <article>
-            <h3>Основні задачі</h3>
-            <div>
+        <article>
+          <h3 class="title c-darkGrey">Основні задачі</h3>
+          <div class="about-tasks">
+            <div class="task-item">
               <div>1</div>
-              <p>
+              <p class="c-black">
                 Створення комфортних уомв і підвищення якості обслуговування
                 клієнтів
               </p>
             </div>
-            <div>
+
+            <div class="task-item">
               <div>2</div>
-              <p>
+              <p class="c-black">
                 Постійно вдосконалювати якість наданих послуг шляхом навчання
                 персоналу, закуповування нового обладнання і посиленої реклами
                 на ринку
               </p>
             </div>
-          </article>
+          </div>
+        </article>
+      </section>
+
+      <!-- Projects section -->
+      <section id="projects" class="container section">
+        <h2 class="title c-darkGrey">Наші проекти</h2>
+        <div class="projects-wrapper">
+          <figure class="project">
+            <img
+              src="./image/project1.png"
+              alt="Fasade building"
+              class="imageg"
+            />
+          </figure>
+          <figure class="project">
+            <img
+              src="./image/project2.png"
+              alt="Fasade building"
+              class="imageg"
+            />
+          </figure>
+          <figure class="project">
+            <img
+              src="./image/project3.png"
+              alt="Fasade building"
+              class="imageg"
+            />
+          </figure>
+          <figure class="project">
+            <img
+              src="./image/project4.png"
+              alt="Fasade building"
+              class="imageg"
+            />
+          </figure>
+          <figure class="project">
+            <img
+              src="./image/project5.png"
+              alt="Fasade building"
+              class="imageg"
+            />
+          </figure>
         </div>
       </section>
-      <section id="projects"></section>
       <section id="contacts"></section>
     </main>
     <!-- Footer -->
