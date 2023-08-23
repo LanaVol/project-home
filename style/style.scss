@@ -258,45 +258,85 @@ h1 {
 }
 
 // ---------------Projects
-.imageg {
-  width: 100%;
-  height: auto;
-}
+
 .projects-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, auto);
   gap: 1rem;
 }
+
 .project:first-child {
   grid-column: 1/3;
   grid-row: 1;
 }
+
 .project:nth-child(2) {
   grid-column: 3/-1;
   grid-row: 1;
 }
+
 .project:nth-child(3) {
   grid-column: 1;
   grid-row: 2;
+  position: relative;
+
+  img {
+    height: 100%;
+    width: auto;
+  }
 }
+
 .project:nth-child(4) {
   grid-column: 2/4;
   grid-row: 2;
 }
+
 .project:nth-child(5) {
   grid-column: 4;
   grid-row: 2;
   position: relative;
-  overflow: hidden;
+
   img {
     height: 100%;
     width: auto;
-    display: block;
-    position: absolute;
-    top: -50%;
-    left: -50%;
+  }
+}
 
-    transform: translateY(50%);
+.project {
+  overflow: hidden;
+  max-height: 380px;
+  position: relative;
+
+  &:hover .subtitle {
+    transform: translateX(0%);
+  }
+}
+
+.subtitle {
+  @include font(4rem, bold);
+  background-color: $c-black;
+  opacity: 0.5;
+  color: $c-white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  transform: translateX(-100%);
+
+  transition: transform 1000ms ease-in-out;
+}
+
+.imageg {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  transition: transform 1000ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
   }
 }
