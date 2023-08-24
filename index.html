@@ -19,19 +19,19 @@
 
         <nav>
           <ul class="header__list">
-            <li class="list-item">
+            <li class="nav-item">
               <a href="#home">Home</a>
             </li>
-            <li class="list-item">
+            <li class="nav-item">
               <a href="#galery">Galery</a>
             </li>
-            <li class="list-item">
+            <li class="nav-item">
               <a href="#projects"> Projects</a>
             </li>
-            <li class="list-item">
+            <li class="nav-item">
               <a href="#certificates">Сertificates</a>
             </li>
-            <li class="list-item">
+            <li class="nav-item">
               <a href="#contacts">Contacts</a>
             </li>
           </ul>
@@ -49,7 +49,7 @@
             </h1>
 
             <div class="homeBtn-wrap">
-              <button class="arrowBtn">
+              <button class="arrowBtn light">
                 <img src="./image/svg/arrow.svg" alt="Arrow button" />
               </button>
               <button class="arrowBtn">
@@ -72,7 +72,7 @@
               />
             </figure>
 
-            <button class="button homeBtn">
+            <button class="button homeBtn light">
               Переглянути
               <span
                 ><img src="./image/svg/arrow.svg" alt="Arrow button"
@@ -123,7 +123,7 @@
               survived not only five centuries, but also the leap into
               electronic typesetting, remaining essentially unchanged.
             </p>
-            <button class="button aboutBtn">
+            <button class="button light">
               Читати
               <span
                 ><img src="./image/svg/arrow.svg" alt="Arrow button"
@@ -157,23 +157,23 @@
 
       <!-- Projects section -->
       <section id="projects" class="container section">
-        <h2 class="title c-darkGrey">Наші проекти</h2>
+        <h2 class="projectsTitle title c-darkGrey">Наші проекти</h2>
         <div class="projects-wrapper">
           <div class="project">
             <figure>
               <img
                 src="./image/project1.png"
                 alt="Fasade building"
-                class="imageg"
+                class="image"
               />
             </figure>
 
-            <div class="subtitle">
-              <h3>Проект Перший</h3>
-              <button class="button">
-                Читати
+            <div class="subtitle c-white dark">
+              <h3>First Project</h3>
+              <button class="button dark c-white">
+                Read more
                 <span
-                  ><img src="./image/svg/arrow.svg" alt="Arrow button"
+                  ><img src="./image/svg/arrowWhite.svg" alt="Arrow button"
                 /></span>
               </button>
             </div>
@@ -184,16 +184,16 @@
               <img
                 src="./image/project2.png"
                 alt="Fasade building"
-                class="imageg"
+                class="image"
               />
             </figure>
 
-            <div class="subtitle">
-              <h3>Проект Другий</h3>
-              <button class="button">
-                Читати
+            <div class="subtitle c-white dark">
+              <h3>Second Project</h3>
+              <button class="button dark c-white">
+                Read more
                 <span
-                  ><img src="./image/svg/arrow.svg" alt="Arrow button"
+                  ><img src="./image/svg/arrowWhite.svg" alt="Arrow button"
                 /></span>
               </button>
             </div>
@@ -204,16 +204,16 @@
               <img
                 src="./image/project3.png"
                 alt="Fasade building"
-                class="imageg"
+                class="image"
               />
             </figure>
 
-            <div class="subtitle">
-              <h3>Проект Другий</h3>
-              <button class="button">
-                Читати
+            <div class="subtitle c-white dark">
+              <h3>Third Project</h3>
+              <button class="button dark c-white">
+                Read more
                 <span
-                  ><img src="./image/svg/arrow.svg" alt="Arrow button"
+                  ><img src="./image/svg/arrowWhite.svg" alt="Arrow button"
                 /></span>
               </button>
             </div>
@@ -224,16 +224,16 @@
               <img
                 src="./image/project4.png"
                 alt="Fasade building"
-                class="imageg"
+                class="image"
               />
             </figure>
 
-            <div class="subtitle">
-              <h3>Проект Другий</h3>
-              <button class="button">
-                Читати
+            <div class="subtitle c-white dark">
+              <h3>Fourth Project</h3>
+              <button class="button dark c-white">
+                Read more
                 <span
-                  ><img src="./image/svg/arrow.svg" alt="Arrow button"
+                  ><img src="./image/svg/arrowWhite.svg" alt="Arrow button"
                 /></span>
               </button>
             </div>
@@ -244,25 +244,188 @@
               <img
                 src="./image/project5.png"
                 alt="Fasade building"
-                class="imageg"
+                class="image"
               />
             </figure>
 
-            <div class="subtitle">
-              <h3>Проект Другий</h3>
-              <button class="button">
-                Читати
+            <div class="subtitle c-white dark">
+              <h3>Fifth Project</h3>
+              <button class="button dark c-white">
+                Read more
                 <span
-                  ><img src="./image/svg/arrow.svg" alt="Arrow button"
+                  ><img src="./image/svg/arrowWhite.svg" alt="Arrow button"
                 /></span>
               </button>
             </div>
           </div>
         </div>
+        <div class="allProjectBtn">
+          <button class="button dark c-white">
+            Всі проекти
+            <span
+              ><img src="./image/svg/arrowWhite.svg" alt="Arrow button"
+            /></span>
+          </button>
+        </div>
       </section>
-      <section id="contacts"></section>
+
+      <!-- Contacts section -->
+      <section id="contacts" class="container section">
+        <h2 class="title c-darkGrey">Contacts Us</h2>
+        <div class="contacts">
+          <form class="form">
+            <div class="form__item">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                class="form-name reqEl grey"
+                title="Enter only letters"
+              />
+              <div class="hint">Only letters are allowed</div>
+            </div>
+
+            <div class="form__item">
+              <label for="number">Phone Number <span>*</span></label>
+              <input
+                type="text"
+                id="number"
+                class="form-number reqEl grey"
+                title='Enter only numbers and "+" sign'
+              />
+              <div class="hint">Only numbers and the "+" sign are allowed</div>
+            </div>
+
+            <div class="form__item">
+              <label for="email">E-mail<span>*</span></label>
+              <input
+                type="text"
+                id="email"
+                class="form-email reqEl grey"
+                title='Allowed letters and numbers, also must contain "@" and domain-name'
+              />
+              <div class="hint">
+                The email must be in the format username@domain.com.
+              </div>
+            </div>
+
+            <div class="form__item">
+              <label for="service">Product or Service</label>
+              <input
+                type="text"
+                id="service"
+                class="form-service reqEl grey"
+                title="Enter only letters"
+              />
+              <div class="hint">Only letters are allowed.</div>
+            </div>
+
+            <div class="form__item">
+              <label for="message">Message <span>*</span></label>
+              <textarea cols="30" rows="5" class="grey" id="message"></textarea>
+            </div>
+
+            <div class="form__item">
+              <input type="checkbox" id="agree" class="checkbox" />
+              <label for="agree"
+                ><span class="checkflag"></span>Submitting the application you
+                will be agree with the privacy policy</label
+              >
+            </div>
+          </form>
+
+          <div class="contactsImg">
+            <figure>
+              <img
+                src="./image/contactsImg.png"
+                alt="Man talking to phone"
+                class="image"
+              />
+            </figure>
+          </div>
+        </div>
+
+        <button class="button dark c-white">
+          Send
+          <span
+            ><img src="./image/svg/arrowWhite.svg" alt="Arrow button"
+          /></span>
+        </button>
+      </section>
     </main>
     <!-- Footer -->
-    <footer></footer>
+    <footer>
+      <div class="container footer">
+        <div>
+          <figure>
+            <img src="./image/svg/logoWhite.svg" alt="Logo" />
+          </figure>
+        </div>
+
+        <ul>
+          <li class="list-item footer-title c-white">Information</li>
+          <li class="list-item c-white">
+            <a href="#home">Home</a>
+          </li>
+          <li class="list-item c-white">
+            <a href="#galery">Galery</a>
+          </li>
+          <li class="list-item c-white">
+            <a href="#projects"> Projects</a>
+          </li>
+          <li class="list-item c-white">
+            <a href="#certificates">Сertificates</a>
+          </li>
+          <li class="list-item c-white">
+            <a href="#contacts">Contacts</a>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="list-item footer-title c-white">Contacts</li>
+          <li class="list-item c-white">
+            <span></span>100000, Republic of Kazakhstan, Karaganda
+          </li>
+          <li class="list-item c-white">+38(000) 000 00 00</li>
+          <li class="list-item c-white">mail@gmail.com</li>
+        </ul>
+
+        <div>
+          <p class="footer-title c-white">Social networks</p>
+          <ul class="footer__icons">
+            <li>
+              <a href="https://uk-ua.facebook.com/" target="_blank"
+                ><img src="./image/svg/fb.svg" alt="Facebook icon" class="icon"
+              /></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/?lang=uk" target="_blank"
+                ><img
+                  src="./image/svg/twitter.svg"
+                  alt="Twitter icon"
+                  class="icon"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/" target="_blank"
+                ><img
+                  src="./image/svg/linkedin.svg"
+                  alt="linkedin icon"
+                  class="icon"
+              /></a>
+            </li>
+            <li>
+              <a href="https://ru.pinterest.com/" target="_blank"
+                ><img
+                  src="./image/svg/pinterestIcon.svg"
+                  alt="Pinterest icon"
+                  class="icon"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div></div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,34 @@
+// variables settings
+$f-TTHoves: "TT Hoves";
+$c-black: #333333;
+$bg-black: #2c2c2c;
+$c-white: #ffffff;
+$c-whitetransperent: #ffffff80;
+$dark-grey: #bdbdbd;
+$c-light-grey: #f2f2f2;
+$bg-light-grey: #fbfbfb;
+$bg-grey: #f3f3f3;
+$bg-white-grey: #f9f9f9;
+$footer-bg: #2c2c2c;
+
+// mixins
+@mixin flex($justify) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin font($fs, $fw) {
+  font-size: $fs;
+  font-weight: $fw;
+}
+
+@mixin grid($gcs, $gce, $gr) {
+  grid-column-start: $gcs;
+  grid-column-end: $gce;
+  grid-row: $gr;
+}
+@mixin widthHeight($w, $h) {
+  width: $w;
+  height: $h;
+}

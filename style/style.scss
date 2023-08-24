@@ -1,71 +1,47 @@
 // file reset default styles
 @import "./resetstyles.scss";
-
 // file with fonts settings
 @import "./fonts.scss";
+// file with mixins and variables
+@import "./generalStyles.scss";
 
-// variables settings
-$f-TTHoves: "TT Hoves";
-$c-black: #333333;
-$bg-black: #2c2c2c;
-$c-white: #ffffff;
-$c-whitetransperent: #ffffff80;
-$dark-grey: #bdbdbd;
-$c-light-grey: #f2f2f2;
-$bg-light-grey: #fbfbfb;
-$bg-grey: #f3f3f3;
-$bg-white-grey: #f9f9f9;
-
-// mixins
-@mixin flex($justify) {
-  display: flex;
-  justify-content: $justify;
-  align-items: center;
-}
-
-@mixin font($fs, $fw) {
-  font-size: $fs;
-  font-weight: $fw;
-}
-
-// general styles settings
-
+// -----general styles settings
 body {
   font-family: $f-TTHoves;
 }
-
 .light {
   background-color: $c-white;
 }
 .dark {
   background-color: $c-black;
 }
-
+.grey {
+  background-color: $bg-grey;
+}
 .c-black {
   color: $c-black;
 }
 .c-darkGrey {
   color: $dark-grey;
 }
+.c-white {
+  color: $c-white;
+}
 
 .container {
   max-width: 1620px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
 }
-
 .section {
   min-height: 100vh;
-  padding-top: 8vh;
+  padding-top: 10vh;
 }
-
 .title {
   @include font(4rem, 300);
 }
-
 .image {
-  width: 100%;
-  height: auto;
+  @include widthHeight(100%, auto);
 }
 
 // ------------Header
@@ -79,8 +55,7 @@ header {
   width: 40%;
 
   figure {
-    width: auto;
-    height: 100%;
+    @include widthHeight(auto, 100%);
   }
 }
 .header,
@@ -96,12 +71,41 @@ header {
 
 .header__list {
   width: 60%;
-  gap: 1rem;
+  gap: 1.5rem;
 
   a {
     @include font(0.8rem, normal);
     letter-spacing: 0.2rem;
     text-transform: uppercase;
+  }
+}
+
+.nav-item {
+  padding: 0.2rem;
+  // transition: border 100ms ease-in-out;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $bg-black;
+    transition: width 200ms linear;
+  }
+  &::after {
+    bottom: -4px;
+  }
+  &::before {
+    top: -4px;
+  }
+
+  &:hover::after,
+  &:hover::before {
+    width: 100%;
   }
 }
 
@@ -113,7 +117,6 @@ header {
 
 .wrapper {
   @include flex("center");
-
   margin-bottom: 120px;
 }
 
@@ -129,16 +132,13 @@ h1 {
 }
 
 .arrowBtn {
-  width: 53px;
-  height: 53px;
+  @include widthHeight(53px, 53px);
   border: 1px solid $c-light-grey;
 }
-.arrowBtn:first-child {
-  background-color: $c-white;
-  margin-right: 24px;
-}
+
 .arrowBtn:last-child {
   background-color: $bg-white-grey;
+  margin-left: 24px;
 }
 
 .home__image {
@@ -158,6 +158,16 @@ h1 {
   padding: 24px 48px;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
+  transition: all 100ms linear;
+
+  &:hover {
+    box-shadow: 3px 3px 5px $dark-grey;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
 }
 
 .homeBtn-wrap {
@@ -166,8 +176,8 @@ h1 {
 
 .homeBtn {
   position: absolute;
+  left: 0;
   bottom: 3px;
-  background-color: $c-white;
 }
 
 .home__numbers {
@@ -178,8 +188,7 @@ h1 {
 
   li:first-child::after {
     content: "";
-    width: 20px;
-    height: 30px;
+    @include widthHeight(20px, 30px);
     padding: 10px;
     border-right: 2px solid $c-light-grey;
     transform: rotate(90deg);
@@ -187,18 +196,13 @@ h1 {
 }
 
 // ---------------Galery
-// .galery {
-//   min-height: 100vh;
-//   border: 1px solid red;
-// }
-
 .about {
   @include flex("center");
 
   background-color: $bg-light-grey;
   padding: 30px 70px 30px 100px;
   position: relative;
-  margin-bottom: 120px;
+  margin-bottom: 90px;
 }
 
 .aboutInfo {
@@ -217,10 +221,6 @@ h1 {
   }
 }
 
-.aboutBtn {
-  background-color: $c-white;
-}
-
 .aboutImage {
   width: 65%;
   @include flex("start");
@@ -237,13 +237,14 @@ h1 {
 
 .about-tasks {
   @include flex("center");
+  gap: 2rem;
   margin-bottom: 120px;
 }
 
 .task-item {
   width: 50%;
   @include flex("center");
-  gap: 2rem;
+  gap: 1rem;
 
   div {
     @include font(200px, 700);
@@ -258,85 +259,229 @@ h1 {
 }
 
 // ---------------Projects
+.projectsTitle {
+  margin-bottom: 60px;
+}
 
 .projects-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, auto);
   gap: 1rem;
+  margin-bottom: 30px;
 }
 
 .project:first-child {
-  grid-column: 1/3;
-  grid-row: 1;
+  @include grid(1, 3, 1);
 }
 
 .project:nth-child(2) {
-  grid-column: 3/-1;
-  grid-row: 1;
+  @include grid(3, -1, 1);
 }
 
 .project:nth-child(3) {
-  grid-column: 1;
-  grid-row: 2;
-  position: relative;
+  @include grid(1, 1, 2);
 
-  img {
-    height: 100%;
-    width: auto;
+  img,
+  figure {
+    // @include widthHeight(auto, 100%);
+    @include widthHeight(100%, auto);
   }
 }
 
 .project:nth-child(4) {
-  grid-column: 2/4;
-  grid-row: 2;
+  @include grid(2, 4, 2);
+
+  figure {
+    @include widthHeight(100%, auto);
+  }
 }
 
 .project:nth-child(5) {
-  grid-column: 4;
-  grid-row: 2;
-  position: relative;
+  @include grid(4, 4, 2);
 
-  img {
-    height: 100%;
-    width: auto;
+  img,
+  figure {
+    @include widthHeight(auto, 100%);
   }
 }
 
 .project {
   overflow: hidden;
-  max-height: 380px;
+  max-height: 300px;
+
   position: relative;
 
   &:hover .subtitle {
     transform: translateX(0%);
   }
+
+  .image {
+    display: block;
+
+    transition: transform 1000ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 }
 
 .subtitle {
   @include font(4rem, bold);
-  background-color: $c-black;
+  @include flex(center);
+  flex-direction: column;
+  align-items: start;
   opacity: 0.5;
-  color: $c-white;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 10;
+  padding: 2rem;
   transform: translateX(-100%);
 
   transition: transform 1000ms ease-in-out;
+
+  .button {
+    padding-left: 0;
+    cursor: pointer;
+  }
 }
 
-.imageg {
-  width: 100%;
-  height: auto;
-  display: block;
+.allProjectBtn {
+  @include flex(end);
+}
 
-  transition: transform 1000ms ease-in-out;
+// ------------------Contacts
+.section:last-child {
+  min-height: (80vh);
+  border: 1px solid red;
+}
+
+.contacts {
+  @include flex(center);
+  align-items: start;
+  gap: 1rem;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  min-height: fit-content;
+}
+
+.form {
+  width: 40%;
+  height: 100%;
+  max-width: 650px;
+}
+
+.form__item {
+  position: relative;
+
+  label {
+    position: absolute;
+    left: 20px;
+    top: 14px;
+  }
+  span {
+    color: red;
+  }
+
+  input,
+  textarea {
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+    resize: none;
+
+    &:focus {
+      border: 1px solid $c-black;
+    }
+  }
+}
+
+.hint {
+  display: none;
+  width: fit-content;
+  max-width: 350px;
+  height: fit-content;
+  font-size: 12px;
+  color: red;
+  padding: 3px;
+  position: absolute;
+  right: 40px;
+  bottom: -5px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox + label > span.checkflag {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 1px solid $bg-black;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+.checkbox > label {
+  @include flex(center);
+}
+
+input[type="checkbox"]:checked + label > span.checkflag {
+  background: $bg-grey;
+  background-image: url(../image/svg/agreeIcon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.contactsImg {
+  width: 60%;
+  position: relative;
+
+  figure {
+    display: block;
+  }
+}
+
+// ---------------Footer
+footer {
+  background-color: $footer-bg;
+  min-height: 20vh;
+}
+
+.footer {
+  @include flex(space-between);
+  align-items: start;
+
+  .footer-title {
+    @include font(1rem, bold);
+    margin-bottom: 9px;
+  }
+  .list-item {
+    padding: 8px;
+  }
+}
+
+.footer__icons {
+  @include flex(space-between);
+  gap: 1.5rem;
+}
+
+.icon {
+  border-radius: 50%;
+  transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
 
   &:hover {
-    transform: scale(1.05);
+    box-shadow: 2px 2px 5px $c-light-grey;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(2px);
   }
 }
