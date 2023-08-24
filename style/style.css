@@ -227,6 +227,7 @@ h1 span {
   padding: 24px 48px;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
+  cursor: pointer;
   transition: all 100ms linear;
 }
 .button:hover {
@@ -467,12 +468,17 @@ h1 span {
   width: 100%;
   font-size: 1rem;
   padding: 14px 20px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   resize: none;
+  position: relative;
 }
 .form__item input:focus,
 .form__item textarea:focus {
   border: 1px solid #333333;
+}
+
+.error {
+  filter: drop-shadow(0px 2px 5px rgba(213, 13, 13, 0.5));
 }
 
 .hint {
@@ -482,12 +488,12 @@ h1 span {
   max-width: 350px;
   height: -moz-fit-content;
   height: fit-content;
-  font-size: 12px;
+  font-size: 10px;
   color: red;
   padding: 3px;
   position: absolute;
-  right: 40px;
-  bottom: -5px;
+  right: 20px;
+  bottom: 0;
 }
 
 input[type=checkbox] {

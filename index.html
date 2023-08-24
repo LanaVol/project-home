@@ -275,9 +275,10 @@
         <div class="contacts">
           <form class="form">
             <div class="form__item">
-              <label for="name">Name</label>
+              <!-- <label for="name">Name</label> -->
               <input
                 type="text"
+                placeholder="Name"
                 id="name"
                 class="form-name reqEl grey"
                 title="Enter only letters"
@@ -286,9 +287,10 @@
             </div>
 
             <div class="form__item">
-              <label for="number">Phone Number <span>*</span></label>
+              <!-- <label for="number">Phone Number <span>*</span></label> -->
               <input
                 type="text"
+                placeholder="Phone Number"
                 id="number"
                 class="form-number reqEl grey"
                 title='Enter only numbers and "+" sign'
@@ -297,9 +299,10 @@
             </div>
 
             <div class="form__item">
-              <label for="email">E-mail<span>*</span></label>
+              <!-- <label for="email">E-mail<span>*</span></label> -->
               <input
                 type="text"
+                placeholder="E-mail"
                 id="email"
                 class="form-email reqEl grey"
                 title='Allowed letters and numbers, also must contain "@" and domain-name'
@@ -310,9 +313,10 @@
             </div>
 
             <div class="form__item">
-              <label for="service">Product or Service</label>
+              <!-- <label for="service">Product or Service</label> -->
               <input
                 type="text"
+                placeholder="Product or Service"
                 id="service"
                 class="form-service reqEl grey"
                 title="Enter only letters"
@@ -321,8 +325,14 @@
             </div>
 
             <div class="form__item">
-              <label for="message">Message <span>*</span></label>
-              <textarea cols="30" rows="5" class="grey" id="message"></textarea>
+              <!-- <label for="message">Message <span>*</span></label> -->
+              <textarea
+                cols="30"
+                rows="5"
+                class="grey"
+                id="message"
+                placeholder="Message"
+              ></textarea>
             </div>
 
             <div class="form__item">
@@ -332,6 +342,12 @@
                 will be agree with the privacy policy</label
               >
             </div>
+            <button class="button dark c-white" type="submit">
+              Send
+              <span
+                ><img src="./image/svg/arrowWhite.svg" alt="Arrow button"
+              /></span>
+            </button>
           </form>
 
           <div class="contactsImg">
@@ -344,13 +360,6 @@
             </figure>
           </div>
         </div>
-
-        <button class="button dark c-white">
-          Send
-          <span
-            ><img src="./image/svg/arrowWhite.svg" alt="Arrow button"
-          /></span>
-        </button>
       </section>
     </main>
     <!-- Footer -->
@@ -391,7 +400,7 @@
         </ul>
 
         <div>
-          <p class="footer-title c-white">Social networks</p>
+          <p class="list-item footer-title c-white">Social networks</p>
           <ul class="footer__icons">
             <li>
               <a href="https://uk-ua.facebook.com/" target="_blank"
@@ -427,5 +436,7 @@
         <div></div>
       </div>
     </footer>
+    <script src="./script/validationForm.js"></script>
+    <script src="./script/scrolling.js"></script>
   </body>
 </html>
