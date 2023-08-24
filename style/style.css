@@ -202,11 +202,15 @@ h1 span {
   width: 53px;
   height: 53px;
   border: 1px solid #f2f2f2;
+  cursor: pointer;
+  transition: all 100ms linear;
 }
-
-.arrowBtn:last-child {
+.arrowBtn:hover {
+  transform: translateY(-1px);
+}
+.arrowBtn:active {
+  transform: translateY(2px);
   background-color: #f9f9f9;
-  margin-left: 24px;
 }
 
 .home__image {
@@ -240,6 +244,10 @@ h1 span {
 
 .homeBtn-wrap {
   margin-bottom: 90px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
 }
 
 .homeBtn {
@@ -252,16 +260,16 @@ h1 span {
   display: flex;
   justify-content: "start";
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   font-size: 1.5rem;
 }
-.home__numbers li:first-child::after {
+.home__numbers li:nth-child(2)::after {
   content: "";
-  width: 20px;
-  height: 30px;
-  padding: 10px;
-  border-right: 2px solid #f2f2f2;
-  transform: rotate(90deg);
+  display: inline-block;
+  width: 3px;
+  height: 40px;
+  background-color: #f2f2f2;
+  transform: rotate(45deg);
 }
 
 .about {
@@ -532,7 +540,7 @@ input[type=checkbox]:checked + label > span.checkflag {
 
 footer {
   background-color: #2c2c2c;
-  min-height: 20vh;
+  min-height: 18vh;
 }
 
 .footer {
@@ -541,13 +549,19 @@ footer {
   align-items: center;
   align-items: start;
 }
+.footer .list-item {
+  padding: 8px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+}
 .footer .footer-title {
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 9px;
-}
-.footer .list-item {
-  padding: 8px;
 }
 
 .footer__icons {
@@ -567,4 +581,13 @@ footer {
 }
 .icon:active {
   transform: translateY(2px);
+}
+
+.privacy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  color: rgba(200, 200, 200, 0.3137254902);
+  border-top: 1px solid rgba(200, 200, 200, 0.3137254902);
 }/*# sourceMappingURL=style.css.map */

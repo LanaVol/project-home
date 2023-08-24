@@ -82,7 +82,6 @@ header {
 
 .nav-item {
   padding: 0.2rem;
-  // transition: border 100ms ease-in-out;
   position: relative;
 
   &::before,
@@ -134,11 +133,17 @@ h1 {
 .arrowBtn {
   @include widthHeight(53px, 53px);
   border: 1px solid $c-light-grey;
-}
+  cursor: pointer;
+  transition: all 100ms linear;
 
-.arrowBtn:last-child {
-  background-color: $bg-white-grey;
-  margin-left: 24px;
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(2px);
+    background-color: $bg-white-grey;
+  }
 }
 
 .home__image {
@@ -172,6 +177,8 @@ h1 {
 
 .homeBtn-wrap {
   margin-bottom: 90px;
+  @include flex(start);
+  gap: 1rem;
 }
 
 .homeBtn {
@@ -182,16 +189,15 @@ h1 {
 
 .home__numbers {
   @include flex("start");
-
-  gap: 1rem;
+  gap: 2rem;
   font-size: 1.5rem;
 
-  li:first-child::after {
+  li:nth-child(2)::after {
     content: "";
-    @include widthHeight(20px, 30px);
-    padding: 10px;
-    border-right: 2px solid $c-light-grey;
-    transform: rotate(90deg);
+    display: inline-block;
+    @include widthHeight(3px, 40px);
+    background-color: $c-light-grey;
+    transform: rotate(45deg);
   }
 }
 
@@ -450,19 +456,23 @@ input[type="checkbox"]:checked + label > span.checkflag {
 // ---------------Footer
 footer {
   background-color: $footer-bg;
-  min-height: 20vh;
+  min-height: 18vh;
 }
 
 .footer {
   @include flex(space-between);
   align-items: start;
 
+  .list-item {
+    padding: 8px;
+    @include font(0.9rem, 400);
+    @include flex(start);
+    gap: 0.5rem;
+  }
+
   .footer-title {
     @include font(1rem, bold);
     margin-bottom: 9px;
-  }
-  .list-item {
-    padding: 8px;
   }
 }
 
@@ -483,4 +493,10 @@ footer {
   &:active {
     transform: translateY(2px);
   }
+}
+.privacy {
+  @include flex(center);
+  padding: 24px;
+  color: $grey-transperent;
+  border-top: 1px solid $grey-transperent;
 }
