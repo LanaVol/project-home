@@ -2,47 +2,8 @@
 @import "./resetstyles.scss";
 // file with fonts settings
 @import "./fonts.scss";
-// file with mixins and variables
+// file with mixins, variables and general styles
 @import "./generalStyles.scss";
-
-// -----general styles settings
-body {
-  font-family: $f-TTHoves;
-}
-.light {
-  background-color: $c-white;
-}
-.dark {
-  background-color: $c-black;
-}
-.grey {
-  background-color: $bg-grey;
-}
-.c-black {
-  color: $c-black;
-}
-.c-darkGrey {
-  color: $dark-grey;
-}
-.c-white {
-  color: $c-white;
-}
-
-.container {
-  max-width: 1620px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-.section {
-  min-height: 100vh;
-  padding-top: 10vh;
-}
-.title {
-  @include font(4rem, 300);
-}
-.image {
-  @include widthHeight(100%, auto);
-}
 
 // ------------Header
 header {
@@ -108,6 +69,12 @@ header {
   }
 }
 
+.nav__burger {
+  padding-right: 40px;
+  cursor: pointer;
+  z-index: 12;
+}
+
 // ------------Home section
 .home {
   // min-height: 92vh;
@@ -116,6 +83,7 @@ header {
 
 .wrapper {
   @include flex("center");
+  gap: 1rem;
   margin-bottom: 120px;
 }
 
@@ -167,7 +135,7 @@ h1 {
 
   &:hover {
     box-shadow: 3px 3px 5px $dark-grey;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
   }
 
   &:active {
@@ -216,7 +184,6 @@ h1 {
   width: 35%;
 
   h2 {
-    @include font(4rem, 300);
     margin-bottom: 20px;
   }
 
@@ -224,6 +191,7 @@ h1 {
     font-size: 1rem;
     line-height: 25px;
     margin-bottom: 20px;
+    padding: 5px;
   }
 }
 
@@ -239,7 +207,6 @@ h1 {
 .about-tasks {
   @include flex("center");
   gap: 2rem;
-  margin-bottom: 120px;
 }
 
 .task-item {
@@ -285,7 +252,6 @@ h1 {
 
   img,
   figure {
-    // @include widthHeight(auto, 100%);
     @include widthHeight(100%, auto);
   }
 }
@@ -329,7 +295,6 @@ h1 {
 }
 
 .subtitle {
-  @include font(4rem, bold);
   @include flex(center);
   flex-direction: column;
   align-items: start;
@@ -339,20 +304,31 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 10;
+  z-index: 2;
   padding: 2rem;
   transform: translateX(-100%);
 
   transition: transform 1000ms ease-in-out;
 
+  h3 {
+    font-weight: bold;
+    padding-left: 0;
+  }
+
   .button {
     padding-left: 0;
     cursor: pointer;
+    position: relative;
+
+    &:hover {
+      padding-left: 1rem;
+    }
   }
 }
 
 .allProjectBtn {
   @include flex(end);
+  margin-bottom: 2rem;
 }
 
 // ------------------Contacts
@@ -379,15 +355,6 @@ h1 {
 .form__item {
   position: relative;
 
-  label {
-    position: absolute;
-    left: 20px;
-    top: 14px;
-  }
-  span {
-    color: red;
-  }
-
   input,
   textarea {
     border: none;
@@ -397,14 +364,20 @@ h1 {
     margin-bottom: 16px;
     resize: none;
     position: relative;
+    transition: box-shadow 100ms linear;
+
+    &:hover {
+      box-shadow: 2px 2px 5px $dark-grey;
+    }
 
     &:focus {
       border: 1px solid $c-black;
     }
   }
 }
+
 .error {
-  filter: drop-shadow(0px 2px 5px rgba(213, 13, 13, 0.5));
+  filter: drop-shadow(2px 2px 3px $red-shadow);
 }
 
 .hint {
@@ -499,4 +472,156 @@ footer {
   padding: 24px;
   color: $grey-transperent;
   border-top: 1px solid $grey-transperent;
+}
+
+// ==================MEDIA SCREEN====================
+// ============ from 0 to 1050
+
+@media screen and (max-width: 1050px) {
+  .title {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+  .header {
+    position: relative;
+    min-height: 3vh;
+    @include flex(space-between);
+
+    nav {
+      width: 100%;
+      height: fit-content;
+      @include flex(end);
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 10;
+    }
+  }
+  .header__logo {
+    padding-left: 40px;
+    padding-top: 10px;
+  }
+
+  .header__list {
+    flex-direction: column;
+    padding: 20px;
+    font-size: 22px;
+    width: 100%;
+    // @include flex(end);
+    background-color: $c-light-grey;
+    transform: translateY(-100%);
+
+    transition: transform 500ms ease-in-out;
+  }
+
+  .showNav {
+    transform: translateY(0%);
+  }
+
+  // -------Home page
+  .wrapper {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .home__image {
+    width: 100%;
+  }
+  .home__title {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+
+    .title {
+      margin: 0;
+      margin-bottom: 2rem;
+
+      @include grid(1, -1, 1);
+    }
+
+    .homeBtn-wrap {
+      @include grid(1, 1, 2);
+      margin-bottom: 0;
+    }
+
+    .home__numbers {
+      @include grid(2, 2, 2);
+      justify-content: end;
+    }
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  // ----------Galery
+  .about {
+    flex-direction: column-reverse;
+    padding: 20px;
+    gap: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .aboutInfo,
+  .aboutImage {
+    width: 100%;
+  }
+  .aboutImage {
+    justify-content: center;
+  }
+  .about-tasks {
+    flex-direction: column;
+    align-items: center;
+  }
+  .task-item {
+    width: 100%;
+
+    div {
+      @include flex(center);
+      width: 20%;
+      font-size: 5rem;
+    }
+    p {
+      width: 80%;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  // --------Project
+  .projects-wrapper {
+    display: block;
+
+    .project {
+      max-height: 400px;
+      margin: 0 auto;
+      margin-bottom: 0.5rem;
+    }
+    .project:nth-child(5) img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  // -------Contacts
+  .contacts {
+    flex-direction: column;
+  }
+  .form {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .contactsImg {
+    display: none;
+  }
+}
+
+// ================================from 1050px to max
+@media screen and (min-width: 1050px) {
+  .nav__burger {
+    display: none;
+  }
 }
