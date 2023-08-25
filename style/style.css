@@ -213,6 +213,9 @@ h1 span {
   cursor: pointer;
   transition: all 100ms linear;
 }
+.arrowBtn:first-child > img {
+  transform: rotate(180deg);
+}
 .arrowBtn:hover {
   transform: translateY(-1px);
 }
@@ -494,6 +497,17 @@ h1 span {
 .form__item textarea:focus {
   border: 1px solid #333333;
 }
+.form__item input::-moz-placeholder, .form__item textarea::-moz-placeholder {
+  font-family: "TT Hoves";
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+.form__item input::placeholder,
+.form__item textarea::placeholder {
+  font-family: "TT Hoves";
+  font-size: 0.9rem;
+  font-weight: normal;
+}
 
 .error {
   filter: drop-shadow(2px 2px 3px rgba(213, 13, 13, 0.5));
@@ -522,15 +536,16 @@ input[type=checkbox] {
   display: inline-block;
   width: 24px;
   height: 24px;
-  border: 1px solid #2c2c2c;
+  border: 1px solid #bdbdbd;
   border-radius: 2px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
-.checkbox > label {
+.agreeLabel {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 input[type=checkbox]:checked + label > span.checkflag {

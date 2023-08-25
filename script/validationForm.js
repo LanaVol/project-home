@@ -2,19 +2,49 @@ const dataFromClient = {
   name: "",
   email: "",
   phone: "",
+  service: "",
+  message: "",
+  agreement: false,
 };
 
 const form = document.querySelector(".form");
 const requiredEls = Array.from(document.querySelectorAll(".reqEl"));
+const checkbox = document.querySelector(".checkbox");
+
 // const formCleanBtn = document.querySelector(".reservClean");
 
+checkbox.addEventListener("change", checkboxAgree);
 form.addEventListener("submit", sendFormToMail);
 form.addEventListener("click", validateForm);
+form.addEventListener("change", addData);
 
 const hints = Array.from(document.querySelectorAll(".hint"));
 
+function checkboxAgree(e) {
+  const checkflag = checkbox.nextElementSibling.firstElementChild;
+  if (!e.currentTarget.checked) {
+    console.log("not checked");
+    checkflag.classList.add("error");
+
+    dataFromClient.agreement = false;
+  } else if (e.currentTarget.checked) {
+    console.log("checked");
+    checkflag.classList.remove("error");
+    dataFromClient.agreement = true;
+  }
+}
+
+function addData(e) {
+  if (e.target.id === "message") {
+    dataFromClient.message = e.target.value;
+  }
+  if (e.target.id === "service") {
+    dataFromClient.service = e.target.value;
+  }
+}
+
 // functions for validate form-input on blur
-function validateForm() {
+function validateForm(e) {
   requiredEls.forEach((el, index) => {
     el.addEventListener("blur", () => {
       let input = el;

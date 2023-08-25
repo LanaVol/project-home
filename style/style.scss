@@ -104,6 +104,10 @@ h1 {
   cursor: pointer;
   transition: all 100ms linear;
 
+  &:first-child > img {
+    transform: rotate(180deg);
+  }
+
   &:hover {
     transform: translateY(-1px);
   }
@@ -374,6 +378,12 @@ h1 {
       border: 1px solid $c-black;
     }
   }
+
+  input::placeholder,
+  textarea::placeholder {
+    font-family: $f-TTHoves;
+    @include font(0.9rem, normal);
+  }
 }
 
 .error {
@@ -401,13 +411,14 @@ input[type="checkbox"] {
   display: inline-block;
   width: 24px;
   height: 24px;
-  border: 1px solid $bg-black;
+  border: 1px solid $dark-grey;
   border-radius: 2px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
-.checkbox > label {
-  @include flex(center);
+.agreeLabel {
+  @include flex(start);
+  margin-bottom: 10px;
 }
 
 input[type="checkbox"]:checked + label > span.checkflag {
