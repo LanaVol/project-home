@@ -411,6 +411,7 @@ input[type="checkbox"] {
   display: inline-block;
   width: 24px;
   height: 24px;
+  min-width: 24px;
   border: 1px solid $dark-grey;
   border-radius: 2px;
   margin-right: 20px;
@@ -446,6 +447,8 @@ footer {
 .footer {
   @include flex(space-between);
   align-items: start;
+  padding: 60px 120px;
+  gap: 1rem;
 
   .list-item {
     padding: 8px;
@@ -480,6 +483,7 @@ footer {
 }
 .privacy {
   @include flex(center);
+  text-align: center;
   padding: 24px;
   color: $grey-transperent;
   border-top: 1px solid $grey-transperent;
@@ -627,6 +631,30 @@ footer {
   }
   .contactsImg {
     display: none;
+  }
+
+  // ---------Footer
+
+  .footer {
+    padding: 20px;
+
+    ul,
+    div,
+    .footer-title {
+      width: 100%;
+    }
+    .list-item {
+      justify-content: center;
+    }
+  }
+  .footer-info {
+    display: none;
+  }
+  // .footer-title {
+  //   @include flex(center);
+  // }
+  .footer__icons {
+    justify-content: center;
   }
 }
 

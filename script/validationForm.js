@@ -82,7 +82,16 @@ function validateForm(e) {
 
 function sendFormToMail(e) {
   e.preventDefault();
-  console.log(dataFromClient);
+  if (
+    dataFromClient.name !== "" &&
+    dataFromClient.email !== "" &&
+    dataFromClient.phone !== "" &&
+    dataFromClient.agreement
+  ) {
+    console.log(dataFromClient);
+  } else {
+    console.log("EEEEEE");
+  }
 }
 
 function checkName(input) {

@@ -536,6 +536,7 @@ input[type=checkbox] {
   display: inline-block;
   width: 24px;
   height: 24px;
+  min-width: 24px;
   border: 1px solid #bdbdbd;
   border-radius: 2px;
   margin-right: 20px;
@@ -573,6 +574,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   align-items: start;
+  padding: 60px 120px;
+  gap: 1rem;
 }
 .footer .list-item {
   padding: 8px;
@@ -612,6 +615,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 24px;
   color: rgba(200, 200, 200, 0.3137254902);
   border-top: 1px solid rgba(200, 200, 200, 0.3137254902);
@@ -748,6 +752,23 @@ footer {
   }
   .contactsImg {
     display: none;
+  }
+  .footer {
+    padding: 20px;
+  }
+  .footer ul,
+  .footer div,
+  .footer .footer-title {
+    width: 100%;
+  }
+  .footer .list-item {
+    justify-content: center;
+  }
+  .footer-info {
+    display: none;
+  }
+  .footer__icons {
+    justify-content: center;
   }
 }
 @media screen and (min-width: 1050px) {
