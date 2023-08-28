@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project Home</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./style/style.css" />
   </head>
 
@@ -48,7 +49,12 @@
       <section id="home" class="home container light">
         <div class="wrapper">
           <div class="home__title">
-            <h1 class="title c-darkGrey">
+            <h1
+              class="title c-darkGrey"
+              data-aos="fade-up"
+              data-aos-offset="500"
+              data-aos-duration="1000"
+            >
               Project <br /><span class="c-black">Home</span>
             </h1>
 
@@ -78,7 +84,7 @@
             </figure>
 
             <button class="button homeBtn light">
-              Переглянути
+              Review
               <span
                 ><img src="./image/svg/arrow.svg" alt="Arrow button"
               /></span>
@@ -118,8 +124,13 @@
             </figure>
           </div>
 
-          <div class="aboutInfo">
-            <h2 class="title c-darkGrey">Про компанію</h2>
+          <div
+            class="aboutInfo"
+            data-aos="fade-left"
+            data-aos-offset="500"
+            data-aos-duration="1000"
+          >
+            <h2 class="title c-darkGrey">About the Company</h2>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -129,7 +140,7 @@
               electronic typesetting, remaining essentially unchanged.
             </p>
             <button class="button light">
-              Читати
+              Read
               <span
                 ><img src="./image/svg/arrow.svg" alt="Arrow button"
               /></span>
@@ -138,22 +149,34 @@
         </div>
 
         <article>
-          <h3 class="title c-darkGrey">Основні задачі</h3>
+          <h3 class="title c-darkGrey">Main Tasks</h3>
           <div class="about-tasks">
-            <div class="task-item">
+            <div
+              class="task-item"
+              class="aboutInfo"
+              data-aos="fade-right"
+              data-aos-offset="500"
+              data-aos-duration="1000"
+            >
               <div>1</div>
               <p class="c-black">
-                Створення комфортних умов і підвищення якості обслуговування
-                клієнтів
+                Creating comfortable conditions and improving the quality of
+                customer service
               </p>
             </div>
 
-            <div class="task-item">
+            <div
+              class="task-item"
+              class="aboutInfo"
+              data-aos="fade-left"
+              data-aos-offset="500"
+              data-aos-duration="1000"
+            >
               <div>2</div>
               <p class="c-black">
-                Постійно вдосконалювати якість наданих послуг шляхом навчання
-                персоналу, закуповування нового обладнання і посиленої реклами
-                на ринку
+                Constantly improve the quality of the provided services through
+                staff training, purchasing new equipment and increased
+                advertising on the market
               </p>
             </div>
           </div>
@@ -162,9 +185,14 @@
 
       <!-- Projects section -->
       <section id="projects" class="container section">
-        <h2 class="projectsTitle title c-darkGrey">Наші проекти</h2>
+        <h2 class="projectsTitle title c-darkGrey">Our Projects</h2>
         <div class="projects-wrapper">
-          <div class="project">
+          <div
+            class="project"
+            data-aos="flip-down"
+            data-aos-offset="500"
+            data-aos-duration="1000"
+          >
             <figure>
               <img
                 src="./image/project1.png"
@@ -184,7 +212,12 @@
             </div>
           </div>
 
-          <div class="project">
+          <div
+            class="project"
+            data-aos="flip-down"
+            data-aos-offset="500"
+            data-aos-duration="1000"
+          >
             <figure>
               <img
                 src="./image/project2.png"
@@ -204,7 +237,12 @@
             </div>
           </div>
 
-          <div class="project">
+          <div
+            class="project"
+            data-aos="flip-down"
+            data-aos-offset="500"
+            data-aos-duration="1000"
+          >
             <figure>
               <img
                 src="./image/project3.png"
@@ -224,7 +262,12 @@
             </div>
           </div>
 
-          <div class="project">
+          <div
+            class="project"
+            data-aos="flip-down"
+            data-aos-offset="500"
+            data-aos-duration="1000"
+          >
             <figure>
               <img
                 src="./image/project4.png"
@@ -244,7 +287,12 @@
             </div>
           </div>
 
-          <div class="project">
+          <div
+            class="project"
+            data-aos="flip-down"
+            data-aos-offset="500"
+            data-aos-duration="1100"
+          >
             <figure>
               <img
                 src="./image/project5.png"
@@ -266,7 +314,7 @@
         </div>
         <div class="allProjectBtn">
           <button class="button dark c-white">
-            Всі проекти
+            All projects
             <span
               ><img src="./image/svg/arrowWhite.svg" alt="Arrow button"
             /></span>
@@ -448,6 +496,7 @@
       </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./script/modalWindows.js"></script>
     <script src="./script/validationForm.js"></script>

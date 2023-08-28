@@ -28,3 +28,5 @@ function changeCloseBurger() {
     navBurger.firstElementChild.setAttribute("src", "./image/svg/burger.svg");
   }
 }
+
+AOS.init();
