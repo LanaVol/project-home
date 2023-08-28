@@ -26,7 +26,6 @@
 
   img,
   figure {
-    // @include widthHeight(100%, auto);
     @include widthHeight(auto, 100%);
   }
 }
@@ -106,8 +105,8 @@
   margin-bottom: 2rem;
 }
 
-//==================MEDIA SCREEN====================
-// ============ from 0 to 1050
+// MEDIA SCREEN
+// from 0 to 1050
 @media screen and (max-width: 1050px) {
   .projects-wrapper {
     display: block;

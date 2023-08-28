@@ -70,8 +70,8 @@ header {
   z-index: 12;
 }
 
-//==================MEDIA SCREEN====================
-// ============ from 0 to 1050
+// MEDIA SCREEN
+// from 0 to 1050
 @media screen and (max-width: 1050px) {
   .header {
     position: relative;
@@ -110,7 +110,7 @@ header {
   }
 }
 
-// ====================from 1050px to max
+// from 1050px to max
 @media screen and (min-width: 1050px) {
   .nav__burger {
     display: none;
