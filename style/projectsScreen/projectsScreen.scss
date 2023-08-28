@@ -1,0 +1,131 @@
+// file with mixins, variables and general styles
+@import "../generalStyles.scss";
+
+.projectsTitle {
+  margin-bottom: 60px;
+}
+
+.projects-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1rem;
+  margin-bottom: 30px;
+}
+
+.project:first-child {
+  @include grid(1, 3, 1);
+}
+
+.project:nth-child(2) {
+  @include grid(3, -1, 1);
+}
+
+.project:nth-child(3) {
+  @include grid(1, 1, 2);
+
+  img,
+  figure {
+    // @include widthHeight(100%, auto);
+    @include widthHeight(auto, 100%);
+  }
+}
+
+.project:nth-child(4) {
+  @include grid(2, 4, 2);
+
+  figure {
+    @include widthHeight(100%, auto);
+  }
+}
+
+.project:nth-child(5) {
+  @include grid(4, 4, 2);
+
+  img,
+  figure {
+    @include widthHeight(auto, 100%);
+  }
+}
+
+.project {
+  overflow: hidden;
+  max-height: 380px;
+
+  position: relative;
+
+  &:hover .subtitle {
+    transform: translateX(0%);
+  }
+
+  .image {
+    display: block;
+
+    transition: transform 1000ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.subtitle {
+  @include flex(center);
+  flex-direction: column;
+  align-items: start;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 2rem;
+  transform: translateX(-100%);
+
+  transition: transform 1000ms ease-in-out;
+
+  h3 {
+    font-weight: bold;
+    padding-left: 0;
+  }
+
+  .button {
+    padding-left: 0;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      padding-left: 1rem;
+    }
+  }
+}
+
+.allProjectBtn {
+  @include flex(end);
+  margin-bottom: 2rem;
+}
+
+//==================MEDIA SCREEN====================
+// ============ from 0 to 1050
+@media screen and (max-width: 1050px) {
+  .projects-wrapper {
+    display: block;
+
+    .project {
+      max-height: 400px;
+      margin: 0 auto;
+      margin-bottom: 0.5rem;
+    }
+    .project:nth-child(5) img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .project:nth-child(3) {
+    img,
+    figure {
+      @include widthHeight(100%, auto);
+    }
+  }
+}

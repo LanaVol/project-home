@@ -1,0 +1,118 @@
+// file with mixins, variables and general styles
+@import "../generalStyles.scss";
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+}
+.header__logo {
+  width: 40%;
+
+  figure {
+    @include widthHeight(auto, 100%);
+  }
+}
+.header,
+.header__list {
+  @include flex("start");
+}
+
+.header {
+  min-height: 8vh;
+  font-family: $f-TTHoves;
+  background-color: $c-whitetransperent;
+}
+
+.header__list {
+  width: 60%;
+  gap: 1.5rem;
+
+  a {
+    @include font(0.8rem, normal);
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+  }
+}
+
+.nav-item {
+  padding: 0.2rem;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $bg-black;
+    transition: width 200ms linear;
+  }
+  &::after {
+    bottom: -4px;
+  }
+  &::before {
+    top: -4px;
+  }
+
+  &:hover::after,
+  &:hover::before {
+    width: 100%;
+  }
+}
+
+.nav__burger {
+  padding-right: 40px;
+  cursor: pointer;
+  z-index: 12;
+}
+
+//==================MEDIA SCREEN====================
+// ============ from 0 to 1050
+@media screen and (max-width: 1050px) {
+  .header {
+    position: relative;
+    min-height: 3vh;
+    @include flex(space-between);
+
+    nav {
+      width: 100%;
+      height: fit-content;
+      @include flex(end);
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 10;
+    }
+  }
+  .header__logo {
+    padding-left: 40px;
+    padding-top: 10px;
+  }
+
+  .header__list {
+    flex-direction: column;
+    padding: 20px;
+    font-size: 22px;
+    width: 100%;
+    background-color: $c-light-grey;
+    transform: translateY(-100%);
+
+    transition: transform 500ms ease-in-out;
+  }
+
+  .showNav {
+    transform: translateY(0%);
+  }
+}
+
+// ====================from 1050px to max
+@media screen and (min-width: 1050px) {
+  .nav__burger {
+    display: none;
+  }
+}

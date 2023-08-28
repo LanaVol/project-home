@@ -1,0 +1,121 @@
+// file with mixins, variables and general styles
+@import "../generalStyles.scss";
+
+.section:last-child {
+  min-height: (80vh);
+}
+
+.contacts {
+  @include flex(center);
+  align-items: start;
+  gap: 1rem;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  min-height: fit-content;
+}
+
+.form {
+  width: 40%;
+  height: 100%;
+  max-width: 650px;
+}
+
+.form__item {
+  position: relative;
+
+  input,
+  textarea {
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px 20px;
+    margin-bottom: 16px;
+    resize: none;
+    position: relative;
+    transition: box-shadow 100ms linear;
+
+    &:hover {
+      box-shadow: 2px 2px 5px $dark-grey;
+    }
+
+    &:focus {
+      border: 1px solid $c-black;
+    }
+  }
+
+  input::placeholder,
+  textarea::placeholder,
+  input,
+  textarea {
+    font-family: $f-TTHoves;
+    @include font(0.9rem, normal);
+  }
+}
+
+.error {
+  filter: drop-shadow(2px 2px 3px $red-shadow);
+}
+
+.hint {
+  display: none;
+  width: fit-content;
+  max-width: 350px;
+  height: fit-content;
+  font-size: 10px;
+  color: red;
+  padding: 3px;
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox + label > span.checkflag {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border: 1px solid $dark-grey;
+  border-radius: 2px;
+  margin-right: 20px;
+}
+
+.agreeLabel {
+  @include flex(start);
+  margin-bottom: 10px;
+}
+
+input[type="checkbox"]:checked + label > span.checkflag {
+  background: $bg-grey;
+  background-image: url(../image/svg/agreeIcon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.contactsImg {
+  width: 60%;
+  position: relative;
+
+  figure {
+    display: block;
+  }
+}
+
+// ==================MEDIA SCREEN====================
+// ============ from 0 to 1050
+
+@media screen and (max-width: 1050px) {
+  .contacts {
+    flex-direction: column;
+  }
+  .form {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .contactsImg {
+    display: none;
+  }
+}

@@ -1,0 +1,164 @@
+// file with mixins, variables and general styles
+@import "../generalStyles.scss";
+
+.home {
+  padding-top: 12vh;
+}
+
+.wrapper {
+  @include flex("center");
+  gap: 1rem;
+  margin-bottom: 120px;
+}
+
+h1 {
+  text-transform: uppercase;
+
+  span {
+    font-weight: bold;
+  }
+}
+.home__title {
+  width: 40%;
+}
+
+.arrowBtn {
+  @include widthHeight(53px, 53px);
+  border: 1px solid $c-light-grey;
+  cursor: pointer;
+  transition: all 100ms linear;
+
+  &:first-child > img {
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(2px);
+    background-color: $bg-white-grey;
+  }
+}
+
+.arrowBtn:last-child {
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 700px;
+    height: 1px;
+    background-color: $c-light-grey;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: rotate(180deg);
+  }
+}
+
+.home__image {
+  width: 60%;
+  position: relative;
+
+  figure {
+    display: block;
+  }
+}
+
+.button {
+  @include flex("center");
+  @include font(0.8rem, normal);
+  gap: 0.5rem;
+  padding: 24px 48px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  transition: all 100ms linear;
+
+  &:hover {
+    box-shadow: 3px 3px 5px $dark-grey;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.homeBtn-wrap {
+  margin-bottom: 90px;
+  @include flex(start);
+  gap: 1rem;
+}
+
+.homeBtn {
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+}
+
+.home__numbers {
+  @include flex("start");
+  gap: 2rem;
+  font-size: 1.5rem;
+
+  li:nth-child(2)::after {
+    content: "";
+    display: inline-block;
+    @include widthHeight(3px, 40px);
+    background-color: $c-light-grey;
+    transform: rotate(45deg);
+  }
+}
+
+//==================MEDIA SCREEN====================
+// ============ from 0 to 1050
+@media screen and (max-width: 1050px) {
+  .wrapper {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .home__image {
+    width: 100%;
+  }
+  .home__title {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+
+    .title {
+      margin: 0;
+      margin-bottom: 2rem;
+
+      @include grid(1, -1, 1);
+    }
+
+    .homeBtn-wrap {
+      @include grid(1, 1, 2);
+      margin-bottom: 0;
+    }
+
+    .home__numbers {
+      @include grid(2, 2, 2);
+      justify-content: end;
+    }
+  }
+
+  .arrowBtn:last-child {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}

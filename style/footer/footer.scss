@@ -1,0 +1,83 @@
+// file with mixins, variables and general styles
+@import "../generalStyles.scss";
+
+footer {
+  background-color: $footer-bg;
+  min-height: 18vh;
+}
+
+.footer {
+  @include flex(space-between);
+  align-items: start;
+  padding: 60px 120px;
+  gap: 1rem;
+
+  .list-item {
+    padding: 8px;
+    @include font(0.9rem, 400);
+    @include flex(start);
+    gap: 0.5rem;
+  }
+
+  .footer-title {
+    @include font(1rem, bold);
+    margin-bottom: 9px;
+  }
+}
+
+.footer__icons {
+  @include flex(space-between);
+  gap: 1.5rem;
+}
+
+.icon {
+  border-radius: 50%;
+  transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+
+  &:hover {
+    box-shadow: 2px 2px 5px $c-light-grey;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+.privacy {
+  @include flex(center);
+  text-align: center;
+  padding: 24px;
+  color: $grey-transperent;
+  border-top: 1px solid $grey-transperent;
+}
+
+// ==================MEDIA SCREEN====================
+// ============ from 0 to 1050
+@media screen and (max-width: 1050px) {
+  .footer {
+    padding: 20px;
+
+    ul,
+    div,
+    .footer-title {
+      width: 100%;
+    }
+
+    figure {
+      width: 100%;
+      @include flex(center);
+    }
+
+    .footer__icons,
+    .list-item {
+      justify-content: center;
+    }
+  }
+  .footer-info {
+    display: none;
+  }
+
+  // .footer__icons {
+  //   justify-content: center;
+  // }
+}

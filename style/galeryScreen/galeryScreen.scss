@@ -1,0 +1,97 @@
+// file with mixins, variables and general styles
+@import "../generalStyles.scss";
+
+.about {
+  @include flex("center");
+
+  background-color: $bg-light-grey;
+  padding: 30px 70px 30px 100px;
+  position: relative;
+  margin-bottom: 90px;
+}
+
+.aboutInfo {
+  padding: 0 10px;
+  width: 35%;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 25px;
+    margin-bottom: 20px;
+    padding: 5px;
+  }
+}
+
+.aboutImage {
+  width: 65%;
+  @include flex("start");
+
+  figure {
+    padding: 5px 15px;
+  }
+}
+
+.about-tasks {
+  @include flex("center");
+  gap: 2rem;
+}
+
+.task-item {
+  width: 50%;
+  @include flex("center");
+  gap: 1rem;
+
+  div {
+    @include font(200px, 700);
+    margin-right: 30px;
+    color: $c-light-grey;
+    font-family: $f-SFProDisplay;
+    font-weight: black;
+  }
+
+  p {
+    @include font(1.4rem, normal);
+    line-height: 36px;
+  }
+}
+
+//==================MEDIA SCREEN====================
+// ============ from 0 to 1050
+@media screen and (max-width: 1050px) {
+  .about {
+    flex-direction: column-reverse;
+    padding: 20px;
+    gap: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .aboutInfo,
+  .aboutImage {
+    width: 100%;
+  }
+  .aboutImage {
+    justify-content: center;
+  }
+  .about-tasks {
+    flex-direction: column;
+    align-items: center;
+  }
+  .task-item {
+    width: 100%;
+
+    div {
+      @include flex(center);
+      width: 20%;
+      font-size: 5rem;
+    }
+    p {
+      width: 80%;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}
