@@ -22,12 +22,14 @@ header {
 
 .header {
   min-height: 8vh;
-  font-family: "TT Hoves";
   background-color: rgba(255, 255, 255, 0.5647058824);
 }
 
-.header__list {
+nav {
   width: 60%;
+}
+
+.header__list {
   gap: 1.5rem;
 }
 .header__list a {
