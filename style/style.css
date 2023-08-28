@@ -64,6 +64,10 @@ input {
   font-weight: 500;
   font-style: normal;
 }
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-Black.woff") format("woff"), url("../fonts/SF-Pro-Display-Black.woff2") format("woff2");
+}
 body {
   font-family: "TT Hoves";
 }
@@ -183,6 +187,49 @@ header {
   z-index: 12;
 }
 
+@media screen and (max-width: 1050px) {
+  .header {
+    position: relative;
+    min-height: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header nav {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+  }
+  .header__logo {
+    padding-left: 40px;
+    padding-top: 10px;
+  }
+  .header__list {
+    flex-direction: column;
+    padding: 20px;
+    font-size: 22px;
+    width: 100%;
+    background-color: #f2f2f2;
+    transform: translateY(-100%);
+    transition: transform 500ms ease-in-out;
+  }
+  .showNav {
+    transform: translateY(0%);
+  }
+}
+@media screen and (min-width: 1050px) {
+  .nav__burger {
+    display: none;
+  }
+}
 .home {
   padding-top: 12vh;
 }
@@ -222,6 +269,20 @@ h1 span {
 .arrowBtn:active {
   transform: translateY(2px);
   background-color: #f9f9f9;
+}
+
+.arrowBtn:last-child {
+  position: relative;
+}
+.arrowBtn:last-child::after {
+  content: "";
+  width: 700px;
+  height: 1px;
+  background-color: #f2f2f2;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: rotate(180deg);
 }
 
 .home__image {
@@ -283,6 +344,53 @@ h1 span {
   transform: rotate(45deg);
 }
 
+@media screen and (max-width: 1050px) {
+  .wrapper {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .home__image {
+    width: 100%;
+  }
+  .home__title {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+  .home__title .title {
+    margin: 0;
+    margin-bottom: 2rem;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row: 1;
+  }
+  .home__title .homeBtn-wrap {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row: 2;
+    margin-bottom: 0;
+  }
+  .home__title .home__numbers {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row: 2;
+    justify-content: end;
+  }
+  .arrowBtn:last-child {
+    position: relative;
+  }
+  .arrowBtn:last-child::after {
+    content: "";
+    width: 0;
+    height: 0;
+  }
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
 .about {
   display: flex;
   justify-content: "center";
@@ -336,6 +444,8 @@ h1 span {
   font-weight: 700;
   margin-right: 30px;
   color: #f2f2f2;
+  font-family: "SF Pro Display";
+  font-weight: black;
 }
 .task-item p {
   font-size: 1.4rem;
@@ -343,6 +453,40 @@ h1 span {
   line-height: 36px;
 }
 
+@media screen and (max-width: 1050px) {
+  .about {
+    flex-direction: column-reverse;
+    padding: 20px;
+    gap: 1rem;
+    margin-bottom: 40px;
+  }
+  .aboutInfo,
+  .aboutImage {
+    width: 100%;
+  }
+  .aboutImage {
+    justify-content: center;
+  }
+  .about-tasks {
+    flex-direction: column;
+    align-items: center;
+  }
+  .task-item {
+    width: 100%;
+  }
+  .task-item div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    font-size: 5rem;
+  }
+  .task-item p {
+    width: 80%;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
 .projectsTitle {
   margin-bottom: 60px;
 }
@@ -374,8 +518,8 @@ h1 span {
 }
 .project:nth-child(3) img,
 .project:nth-child(3) figure {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
 }
 
 .project:nth-child(4) {
@@ -401,7 +545,7 @@ h1 span {
 
 .project {
   overflow: hidden;
-  max-height: 300px;
+  max-height: 380px;
   position: relative;
 }
 .project:hover .subtitle {
@@ -452,9 +596,27 @@ h1 span {
   margin-bottom: 2rem;
 }
 
+@media screen and (max-width: 1050px) {
+  .projects-wrapper {
+    display: block;
+  }
+  .projects-wrapper .project {
+    max-height: 400px;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+  }
+  .projects-wrapper .project:nth-child(5) img {
+    width: 100%;
+    height: auto;
+  }
+  .project:nth-child(3) img,
+  .project:nth-child(3) figure {
+    width: 100%;
+    height: auto;
+  }
+}
 .section:last-child {
   min-height: 80vh;
-  border: 1px solid red;
 }
 
 .contacts {
@@ -503,7 +665,9 @@ h1 span {
   font-weight: normal;
 }
 .form__item input::placeholder,
-.form__item textarea::placeholder {
+.form__item textarea::placeholder,
+.form__item input,
+.form__item textarea {
   font-family: "TT Hoves";
   font-size: 0.9rem;
   font-weight: normal;
@@ -564,6 +728,18 @@ input[type=checkbox]:checked + label > span.checkflag {
   display: block;
 }
 
+@media screen and (max-width: 1050px) {
+  .contacts {
+    flex-direction: column;
+  }
+  .form {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .contactsImg {
+    display: none;
+  }
+}
 footer {
   background-color: #2c2c2c;
   min-height: 18vh;
@@ -622,137 +798,6 @@ footer {
 }
 
 @media screen and (max-width: 1050px) {
-  .title {
-    font-size: 2.8rem;
-    text-align: center;
-  }
-  .header {
-    position: relative;
-    min-height: 3vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .header nav {
-    width: 100%;
-    height: -moz-fit-content;
-    height: fit-content;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 10;
-  }
-  .header__logo {
-    padding-left: 40px;
-    padding-top: 10px;
-  }
-  .header__list {
-    flex-direction: column;
-    padding: 20px;
-    font-size: 22px;
-    width: 100%;
-    background-color: #f2f2f2;
-    transform: translateY(-100%);
-    transition: transform 500ms ease-in-out;
-  }
-  .showNav {
-    transform: translateY(0%);
-  }
-  .wrapper {
-    flex-direction: column;
-    margin-bottom: 40px;
-  }
-  .home__image {
-    width: 100%;
-  }
-  .home__title {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
-  }
-  .home__title .title {
-    margin: 0;
-    margin-bottom: 2rem;
-    grid-column-start: 1;
-    grid-column-end: -1;
-    grid-row: 1;
-  }
-  .home__title .homeBtn-wrap {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row: 2;
-    margin-bottom: 0;
-  }
-  .home__title .home__numbers {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row: 2;
-    justify-content: end;
-  }
-  .footer {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  .about {
-    flex-direction: column-reverse;
-    padding: 20px;
-    gap: 1rem;
-    margin-bottom: 40px;
-  }
-  .aboutInfo,
-  .aboutImage {
-    width: 100%;
-  }
-  .aboutImage {
-    justify-content: center;
-  }
-  .about-tasks {
-    flex-direction: column;
-    align-items: center;
-  }
-  .task-item {
-    width: 100%;
-  }
-  .task-item div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    font-size: 5rem;
-  }
-  .task-item p {
-    width: 80%;
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-  .projects-wrapper {
-    display: block;
-  }
-  .projects-wrapper .project {
-    max-height: 400px;
-    margin: 0 auto;
-    margin-bottom: 0.5rem;
-  }
-  .projects-wrapper .project:nth-child(5) img {
-    width: 100%;
-    height: auto;
-  }
-  .contacts {
-    flex-direction: column;
-  }
-  .form {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .contactsImg {
-    display: none;
-  }
   .footer {
     padding: 20px;
   }
@@ -761,18 +806,23 @@ footer {
   .footer .footer-title {
     width: 100%;
   }
+  .footer figure {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer .footer__icons,
   .footer .list-item {
     justify-content: center;
   }
   .footer-info {
     display: none;
   }
-  .footer__icons {
-    justify-content: center;
-  }
 }
-@media screen and (min-width: 1050px) {
-  .nav__burger {
-    display: none;
+@media screen and (max-width: 1050px) {
+  .title {
+    font-size: 2.8rem;
+    text-align: center;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -25,4 +25,8 @@
   src: local("TT Hoves Medium"), local("../fonts/TTHoves-Medium"), url("../fonts/TTHoves-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/TTHoves-Medium.woff2") format("woff2"), url("../fonts/TTHoves-Medium.woff") format("woff"), url("../fonts/TTHoves-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-Black.woff") format("woff"), url("../fonts/SF-Pro-Display-Black.woff2") format("woff2");
 }/*# sourceMappingURL=fonts.css.map */

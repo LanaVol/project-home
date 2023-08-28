@@ -1,5 +1,6 @@
 // variables settings
 $f-TTHoves: "TT Hoves";
+$f-SFProDisplay: "SF Pro Display";
 $c-black: #333333;
 $bg-black: #2c2c2c;
 $c-white: #ffffff;
@@ -35,42 +36,42 @@ $red-shadow: rgba(213, 13, 13, 0.5);
   height: $h;
 }
 
-// -----general styles settings
-body {
-  font-family: $f-TTHoves;
-}
-.light {
-  background-color: $c-white;
-}
-.dark {
-  background-color: $c-black;
-}
-.grey {
-  background-color: $bg-grey;
-}
-.c-black {
-  color: $c-black;
-}
-.c-darkGrey {
-  color: $dark-grey;
-}
-.c-white {
-  color: $c-white;
-}
+// // -----general styles settings
+// body {
+//   font-family: $f-TTHoves;
+// }
+// .light {
+//   background-color: $c-white;
+// }
+// .dark {
+//   background-color: $c-black;
+// }
+// .grey {
+//   background-color: $bg-grey;
+// }
+// .c-black {
+//   color: $c-black;
+// }
+// .c-darkGrey {
+//   color: $dark-grey;
+// }
+// .c-white {
+//   color: $c-white;
+// }
 
-.container {
-  max-width: 1620px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-.section {
-  min-height: 100vh;
-  padding-top: 10vh;
-}
-.title {
-  @include font(4rem, 300);
-  padding: 5px;
-}
-.image {
-  @include widthHeight(100%, auto);
-}
+// .container {
+//   max-width: 1620px;
+//   margin: 0 auto;
+//   padding: 0 2rem;
+// }
+// .section {
+//   min-height: 100vh;
+//   padding-top: 10vh;
+// }
+// .title {
+//   @include font(4rem, 300);
+//   padding: 5px;
+// }
+// .image {
+//   @include widthHeight(100%, auto);
+// }

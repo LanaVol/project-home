@@ -44,3 +44,8 @@
   font-weight: 500;
   font-style: normal;
 }
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-Black.woff") format("woff"),
+    url("../fonts/SF-Pro-Display-Black.woff2") format("woff2");
+}
