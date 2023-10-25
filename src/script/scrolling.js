@@ -1,3 +1,5 @@
+import AOS from "aos";
+
 // smooth scrolling all section
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {

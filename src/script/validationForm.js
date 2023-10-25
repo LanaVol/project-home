@@ -1,3 +1,6 @@
+import { showModalWindowSuccess } from "./modalWindows";
+import { showModalWindowError } from "./modalWindows";
+
 let dataFromClient = {
   name: "",
   email: "",

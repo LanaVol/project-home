@@ -1,5 +1,10 @@
+// import Swal from "sweetalert2";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+
+import "sweetalert2/src/sweetalert2.scss";
+
 // TEMPLATE MODAL WINDOWS
-function showModalWindowSuccess(message) {
+export function showModalWindowSuccess(message) {
   Swal.fire({
     position: "center",
     showConfirmButton: true,
@@ -10,7 +15,7 @@ function showModalWindowSuccess(message) {
   });
 }
 
-function showModalWindowError(message) {
+export function showModalWindowError(message) {
   Swal.fire({
     icon: "error",
     confirmButtonColor: "#333333",
