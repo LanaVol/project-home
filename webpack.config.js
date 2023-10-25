@@ -13,6 +13,11 @@ module.exports = {
     clean: true,
   },
 
+  devServer: {
+    port: 4800,
+    hot: true,
+  },
+
   plugins: [
     new HTMLWebpackPlugin({
       template: "./index.html",
@@ -30,7 +35,6 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           {
-            // loader: "style-loader",
             loader: MiniCssExtractPlugin.loader,
           },
           {
