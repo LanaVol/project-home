@@ -4,7 +4,9 @@ A simple page layout from a Figma mockup, using HTML, CSS(SCSS), JavaScript, Swe
 
 ## Preview
 
-Link to preview:
+Link to preview:https://project-home-rho.vercel.app/
+
+![Alt text](./src/image/image.png)
 
 ## Features
 
@@ -13,3 +15,4 @@ Link to preview:
 - Animation on scrolling
 - Adaptive styles for laptop and mobile screens
 - Styles components on hover and active state
+- Basic Webpack configuration
